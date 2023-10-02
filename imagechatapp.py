@@ -5,7 +5,13 @@ from kivy.uix.textinput import TextInput
 from kivy.uix.gridlayout import GridLayout
 from kivy.uix.label import Label
 from kivy.lang import Builder
+from kivy.core.text import LabelBase, DEFAULT_FONT
+from kivy.resources import resource_add_path
+
 from chat_gpt_api import chatgpt_api_call
+
+resource_add_path("font")
+LabelBase.register(DEFAULT_FONT, "NotoSansJP-Black.ttf")
 
 Builder.load_file("imagemenu.kv")
 
@@ -21,38 +27,41 @@ class GridLayout(GridLayout):
         self.input = Label(
             text = "user input: ",
             size_hint_y = None,
-            height = 50,
+            height = 30,
             )
         self.add_widget(self.input)
         
         self.textinput = TextInput(
             multiline = False,
             size_hint_y = None,
-            height = 300,
+            height = 100,
             )
         self.add_widget(self.textinput)
         
         self.submit = Button(
             text = "Submit", 
             background_color = (0.3, 1, 0.8, 1),
-            font_size = 30,
+            font_size = 20,
             size_hint_y = None,
-            height = 50,
+            height = 30,
             )
-        self.submit.bind(on_press=self.press)
+        self.submit.bind(on_press = self.press)
         self.add_widget(self.submit)
         
         self.output = Label(
             text = "response: ",
             size_hint_y = None,
-            height = 100,
+            height = 30,
         )
         self.add_widget(self.output)
         
         self.useroutput = Label(
             text = "",
+            font_size = 12,
             text_size = (1500, None),
-            height = 300,
+            size_hint_y = None,
+            height = 500,
+            valign = "top"
             )
         self.add_widget(self.useroutput)
         
@@ -72,6 +81,10 @@ class Main(App):
     def build(self):
         return GridLayout()
         
+        
+if __name__ == "__main__":
+    Main().run()
+
         
 if __name__ == "__main__":
     Main().run()
