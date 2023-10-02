@@ -1,0 +1,12 @@
+<GridLayout>
+    id:mywidget
+    BoxLayout:
+        orientation: "vertical"
+        size: 500, 500
+
+        padding: 50
+        spacing: 20
+
+        FileChooserListView:
+            id: filechooser
+            on_selection: mywidget.selected(filechooser.selection)
