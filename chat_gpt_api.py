@@ -1,8 +1,7 @@
 from yolo_opencv import output_label
 import openai
 
-# openai.api_key = "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"
-openai.api_key = "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"
+openai.api_key = "XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX"
 
 TOKEN = 3000
 
