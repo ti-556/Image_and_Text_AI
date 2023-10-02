@@ -1,7 +1,7 @@
 from yolo_opencv import output_label
 import openai
 
-openai.api_key = "XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX"
+openai.api_key = "XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX"
 
 TOKEN = 3000
 
@@ -22,7 +22,7 @@ def chatgpt_api_call(image_path, prompt=""):
             ],
             max_tokens=TOKEN
         )
-        print(response.choices[0]["message"]["content"].strip())
+        output = response.choices[0]["message"]["content"].strip()
     else:
         print("PROMPT MODE")
         hint = lines
@@ -33,4 +33,6 @@ def chatgpt_api_call(image_path, prompt=""):
             ],
             max_tokens=TOKEN
         )
-        print(response.choices[0]["message"]["content"].strip())
+        output = response.choices[0]["message"]["content"].strip()
+        
+    return output
