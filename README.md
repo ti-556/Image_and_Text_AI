@@ -1,7 +1,7 @@
 # Purpose
 The objective of this application is to help out foreign people to get involved in the Japanese community. The two main issues when moving abroad are language and cultural barriers. Therefore, we feel that there is a need for an image/picture based translation system so that foreign users can understand things that they see for the first time in Japan. Furthermore, we also believe that there is a need for not only 'literal' translations, but also phrases, connotations, cultural backgrounds, etc. of the things that the user wants to understand.
 
-This project is just a prototype of our idea, utilizing useful libraries.
+This project is just a prototype, using openAI api, opencv, and kivy library to implement our ideas.
 
 ## Setup
 Download yolo v3 trianed weights:
